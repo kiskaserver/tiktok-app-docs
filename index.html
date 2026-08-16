@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenShorts Self-Publisher</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1a1a1e; --bg: #fbfbfd;
+          --muted: #5b5b66; --accent: #ff6e40; --card: #ffffff;
+          --line: #e6e6ec; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --fg: #ececf1; --bg: #121216;
+      --muted: #a0a0ad; --card: #1b1b21; --line: #2a2a33; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; }
+  .logo { width: 84px; height: 84px; border-radius: 20px; display: block; }
+  h1 { font-size: 1.9rem; margin: 1.25rem 0 .4rem; letter-spacing: -.01em; }
+  .tag { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 { font-size: 1.05rem; margin: 2.5rem 0 .6rem; }
+  ul { padding-left: 1.15rem; }
+  li { margin: .35rem 0; }
+  .links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.5rem; }
+  .links a { display: inline-block; padding: .6rem 1.1rem; border-radius: 10px;
+             border: 1px solid var(--line); background: var(--card);
+             color: var(--fg); text-decoration: none; font-weight: 500; }
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem;
+           border-top: 1px solid var(--line); color: var(--muted);
+           font-size: .9rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+  <img class="logo" src="app_icon.png" alt="">
+  <h1>OpenShorts Self-Publisher</h1>
+  <p class="tag">
+    A self-hosted tool that turns my own long-form gaming streams into short
+    vertical clips and publishes them to my own TikTok account.
+  </p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Transcribes my own stream recordings locally.</li>
+    <li>Cuts them into vertical 9:16 clips with burned-in subtitles.</li>
+    <li>Queues those clips and uploads them to my TikTok account on a schedule.</li>
+  </ul>
+
+  <h2>How TikTok is used</h2>
+  <ul>
+    <li><strong>Login Kit</strong> (<code>user.info.basic</code>) — one-time
+        authorisation of my own account.</li>
+    <li><strong>Content Posting API</strong> (<code>video.upload</code>) —
+        sends a finished MP4 to my TikTok inbox as a draft.</li>
+    <li><strong>Content Posting API</strong> (<code>video.publish</code>) —
+        posts the clip directly to my own account on a schedule.</li>
+  </ul>
+
+  <h2>Scope</h2>
+  <p>
+    There is no public sign-up and no other end users. The tool runs on my own
+    machine, publishes only my own recordings, and never accesses data
+    belonging to any other TikTok user. It respects the published API limits,
+    including the cap on pending shares per 24 hours.
+  </p>
+
+  <div class="links">
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+
+  <footer>
+    Operated by Mykyta Vinnyk · developer@svitix.com<br>
+    Not affiliated with, endorsed by, or sponsored by TikTok or ByteDance.
+  </footer>
+
+</main>
+</body>
+</html>
