@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — OpenShorts Self-Publisher</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.7rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.2rem; }
+  .meta { opacity: .7; font-size: .9rem; }
+  code { font-size: .92em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="meta">OpenShorts Self-Publisher · Last updated: 17 August 2026</p>
+
+<p>
+  OpenShorts Self-Publisher ("the app") is a self-hosted tool operated by an
+  individual creator on their own computer. It converts that creator's own
+  long-form video recordings into short vertical clips and publishes them to
+  that creator's own TikTok account.
+</p>
+<p>
+  <strong>The app has no public sign-up and no other end users.</strong> The
+  only person who authenticates is the operator, using their own TikTok
+  account. The app never accesses data belonging to any other TikTok user.
+</p>
+
+<h2>1. Who is responsible</h2>
+<p>
+  Operator: <strong>Mykyta Vinnyk</strong><br>
+  Contact: <strong>developer@svitix.com</strong>
+</p>
+
+<h2>2. What data the app handles</h2>
+<ul>
+  <li>
+    <strong>TikTok OAuth tokens.</strong> An access token and refresh token
+    issued for the operator's own account, plus the associated
+    <code>open_id</code>. These are used solely to authorise uploads.
+  </li>
+  <li>
+    <strong>Basic account information</strong> returned by
+    <code>creator_info</code>: nickname, avatar URL, permitted privacy
+    options, and maximum allowed video duration. This is read so the app does
+    not attempt an upload the account is not allowed to make.
+  </li>
+  <li>
+    <strong>Video files and captions</strong> created by the operator from
+    their own recordings, together with the scheduled publication time.
+  </li>
+</ul>
+
+<h2>3. Where data is stored</h2>
+<p>
+  All of the above is stored locally on the operator's own machine, inside a
+  container volume on that machine. Nothing is stored on any server operated
+  by the app, because the app operates no servers. There is no analytics, no
+  tracking, no advertising, and no profiling.
+</p>
+
+<h2>4. Who data is shared with</h2>
+<p>
+  Data is not sold, rented, or shared with third parties. Data leaves the
+  operator's machine only in these cases:
+</p>
+<ul>
+  <li>
+    <strong>TikTok.</strong> Video files, captions and publishing options are
+    sent to the TikTok Content Posting API in order to publish them, which is
+    the entire purpose of the app.
+  </li>
+  <li>
+    <strong>Google Gemini API.</strong> The separate clip-selection stage of
+    the pipeline sends the text transcript of the operator's own recording to
+    Google's Gemini API to identify which moments to cut. No TikTok data and
+    no TikTok tokens are ever sent to Google.
+  </li>
+</ul>
+
+<h2>5. Retention and deletion</h2>
+<p>
+  Tokens remain on the operator's machine until they expire or are deleted.
+  The operator can revoke the app's access at any time in TikTok's own
+  settings, and can delete all stored data by removing the container volume.
+  Revoking access in TikTok immediately invalidates the stored tokens.
+</p>
+
+<h2>6. Security</h2>
+<p>
+  Credentials are held in a local environment file and a local volume that are
+  not published and not committed to source control. The app communicates with
+  TikTok over HTTPS only.
+</p>
+
+<h2>7. Children</h2>
+<p>
+  The app is not directed at children and is used only by its operator.
+</p>
+
+<h2>8. Changes</h2>
+<p>
+  Any change to this policy will be published at this URL with an updated
+  date above.
+</p>
+
+</body>
+</html>
